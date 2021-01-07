@@ -112,7 +112,7 @@ async def log(ctx, onoff: str):
     await ctx.send(cbot.disable_logging())
 
 @bot.command(name='enhance', help='\'enhances\' image in attachment', pass_context=True)
-async def enhance(ctx, shift: int):
+async def enhance(ctx, shift = None):
   if shift != None:
     _file = cbot.shift_image(ctx.message.attachments[0].url, shift)
   else:
