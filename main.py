@@ -70,7 +70,7 @@ class Bot:
       image_url: URL leading to image
       
     Optional parameters:
-      shift: Amount every pizel in image should be changed by. Should be value bteween -255 and 255
+      shift: Amount every pizel in image should be changed by. Should be value between -255 and 255
     """
     img = Image.open(self.get_image(image_url))
     pixels = img.load()
