@@ -70,7 +70,7 @@ class Bot:
       image_url: URL leading to image
       
     Optional parameters:
-      shift: Amount every pizel in image should be changed by. Should be value bteween -255 and 255
+      shift: Amount every pixel in image should be changed by. Should be value between -255 and 255
     """
     img = Image.open(self.get_image(image_url))
     pixels = img.load()
@@ -112,7 +112,7 @@ async def log(ctx, onoff: str):
     await ctx.send(cbot.disable_logging())
 
 @bot.command(name='enhance', help='\'enhances\' image in attachment', pass_context=True)
-async def enhance(ctx, shift: int):
+async def enhance(ctx, shift = None):
   if shift != None:
     _file = cbot.shift_image(ctx.message.attachments[0].url, shift)
   else:
